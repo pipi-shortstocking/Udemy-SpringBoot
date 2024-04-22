@@ -15,8 +15,13 @@ public class AppGamingBasicJava {
 
 //        var game = new MarioGame();
 //        var game = new SuperContraGame();
-        var game = new PacmanGame();
+
+        var game = new PacmanGame(); // 1. 객체 생성(Object Creation)
+
+        // 2. 객체 생성(Object Creation) + 종속성 연결 (Wiring of Dependecies)
+        // Game(넓게보면 GamingConsole)은 GameRunner 클래스의 의존성(Dependency)임
         var gameRunner = new GameRunner(game);
+
         gameRunner.run();
     }
 }
