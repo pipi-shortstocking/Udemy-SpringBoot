@@ -1,7 +1,9 @@
 package com.in28minutes.learnspringframework;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 // JDK 16에서 등장
 // Java Bean을 만드는 번거로움을 없애기 위해 도입됨
@@ -42,12 +44,29 @@ public class HelloWorldConfiguration {
         return new Person(name, age, address3); // name, age, address
     }
 
+    @Bean
+    @Primary
+    // No qualifying bean of type 'com.in28minutes.learnspringframework.Address'
+    // available: expected single matching bean but found 2: address2,address3
+    public Person person4Parameters(String name, int age, Address address){
+        // name, age, address2
+        return new Person(name, age, address); // name, age, address
+    }
+
+    @Bean
+    public Person person5Qualifier(String name, int age, @Qualifier("address3qualifier") Address address){
+        // name, age, address3
+        return new Person(name, age, address); // name, age, address
+    }
+
     @Bean(name="address2") // Bean 이름 사용자 지정 가능
+    @Primary
     public Address address(){
         return new Address("Baker Street", "London");
     }
 
     @Bean(name="address3")
+    @Qualifier("address3qualifier")
     public Address address3(){
         return new Address("Motinagar", "Hyderbad");
     }
