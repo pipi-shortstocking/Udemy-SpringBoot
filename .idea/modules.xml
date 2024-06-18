@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Udemy-SpringBoot.iml" filepath="$PROJECT_DIR$/.idea/Udemy-SpringBoot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/learn-spring-framework/learn-spring-framework.iml" filepath="$PROJECT_DIR$/learn-spring-framework/learn-spring-framework.iml" />
     </modules>
   </component>
 </project>
