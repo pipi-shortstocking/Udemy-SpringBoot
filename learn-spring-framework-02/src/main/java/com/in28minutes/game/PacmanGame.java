@@ -1,19 +1,22 @@
 package com.in28minutes.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacmanGame implements GamingConsole {
     public void up() {
-        System.out.println("go above");
+        System.out.println("up");
     }
 
     public void down() {
-        System.out.println("look down");
+        System.out.println("down");
     }
 
     public void left() {
-        System.out.println("go left");
+        System.out.println("left");
     }
 
     public void right(){
-        System.out.println("go right");
+        System.out.println("right");
     }
 }
